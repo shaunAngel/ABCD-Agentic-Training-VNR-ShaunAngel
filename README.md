@@ -28,23 +28,25 @@ The automation is built using an LLM orchestration tool (e.g., Flowise/N8n) and 
 Publishes the generated text to the Classroom stream via:POST https://classroom.googleapis.com/v1/courses/
 <COURSE_ID>/announcements
 
-🧩Requirements
+🧩 Requirements
 
 Google Cloud Project with Classroom API enabled
 
 Gemini (PaLM) API access
 
-Automation platform (e.g., Flowise, N8n)
+Automation platform (e.g., Flowise or n8n)
 
-OAuth 2.0 credentials
+OAuth 2.0 credentials for authorized Classroom access
 
 🚀Usage
 
-Configure your Google OAuth credentials and Classroom API access.
+Configure your Google OAuth credentials and enable Classroom API access.
 
-Replace <COURSE_ID> with your Classroom course’s ID.
+In the HTTP Request #3 node (announcement POST request),
+🔸 Replace <COURSE_ID> manually with the actual course ID from your Classroom.
+(You can find it in the URL of your Google Classroom — it’s the long alphanumeric code after /c/.)
 
 Schedule the trigger (daily, weekly, or before each class).
 
-Run the workflow — your announcement will appear automatically in Classroom.
+Run the workflow — the AI-generated announcement will automatically appear in your Google Classroom Stream.
 
